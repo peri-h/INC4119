@@ -6,8 +6,9 @@ import React from "react";
  * @param {string} description - 프로젝트의 설명
  * @param {string} image - 프로젝트의 이미지 URL (선택적)
  * @param {string} link - 프로젝트의 외부 링크 URL (선택적)
+ * @param {React.ComponentType} reactComponent - 커스텀 버튼 컴포넌트 (선택적)
  */
-const ProjectCard = ({ title, description, image, link }) => {
+const ProjectCard = ({ title, description, image, link, reactComponent }) => {
   return (
     <div className="project-card">
       <h3>{title}</h3>
@@ -23,6 +24,9 @@ const ProjectCard = ({ title, description, image, link }) => {
         <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
           프로젝트 보기
         </a>
+      )}
+      {reactComponent && (
+        reactComponent
       )}
     </div>
   );
